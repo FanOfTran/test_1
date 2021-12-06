@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 3</title>
+    <link rel="stylesheet" type="text/css" href="new_styles2.css">
+
+    <script>
+
+        
+       
+
+        function calculateCharges() {
+            
+        
+
+           
+            var product1 = document.getElementById("product1");
+            var product2 = document.getElementById("product2");
+            var product3 = document.getElementById("product3");
+            var product4 = document.getElementById("product4");
+
+            var p1 = parseFloat(product1.value);
+            var p2 = parseFloat(product2.value);
+            var p3 = parseFloat(product3.value);
+            var p4 = parseFloat(product4.value);
+            console.log(p1, p2, p3, p4)
+
+            var p1_revenue = p1 * 75
+            var p2_revenue = p2 * 100
+            var p3_revenue = p3 * 125
+            var p4_revenue = p4 * 200
+
+            var total_revenue = p1_revenue + p2_revenue + p3_revenue +p4_revenue
+
+            var total_commission = total_revenue * 0.0875
+
+            var weekly_add_on = 900
+
+            var total_takehome_pay = total_commission + weekly_add_on
+
+            var msg = "Salesperson's total earnings is $" + total_takehome_pay.toFixed(2) + " that includes $" + weekly_add_on + 
+            " per week plus a commission $" + total_commission.toFixed(2) + " ( 8.75% of total sale of $" + total_revenue + " )"
+            
+            var innercontainer = document.getElementById("innercontainer")
+            innercontainer.innerHTML="<p>" + msg + "</p>"
+
+        } 
+      
+
+
+    </script>
+
+</head>
+
+<body>
+    <form class="form-inline" action="javascript:calculateCharges()" >
+
+        <div class="center" id="innercontainer">
+            <p>
+                <label>Product 1</label>
+                <br>
+                <input type="number" id="product1" min="0" required />
+            </p>
+
+            <p>
+                <label>Product 2</label>
+                <br>
+                <input type="number" id="product2" min="0" required />
+            </p>
+
+            <p>
+                <label>Product 3</label>
+                <br>
+                <input type="number" id="product3" min="0" required />
+            </p>
+
+            <p>
+                <label>Product 4</label>
+                <br>
+                <input type="number" id="product4" min="0" required />
+            </p>
+
+            <p>
+                <input type="submit" class="button button1" value="SALESPERSON'S EARNINGS" />
+            </p>
+
+
+
+        </div>
+
+
+    </form>
+</body>
+
+</html>
